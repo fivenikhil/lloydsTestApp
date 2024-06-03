@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/layout_20"
+                android:layout_marginTop="@dimen/layout_20"
+                android:layout_marginEnd="@dimen/layout_20"
+                android:layout_marginBottom="@dimen/layout_20"
+                app:cardCornerRadius="@dimen/layout_5"
+                app:cardElevation="3dp"
+                app:cardUseCompatPadding="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/item_img"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/layout_200"
+                        android:layout_gravity="center"
+                        android:scaleType="centerCrop"
+                        android:src="@mipmap/ic_launcher" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/item_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/app_name"
+                        android:layout_gravity="center"
+                        android:maxLines="2"
+                        android:layout_margin="@dimen/layout_8"
+                        android:textColor="@color/black"
+                        android:layout_marginTop="@dimen/layout_8"
+                        android:textSize="@dimen/text_24"
+                        android:fontFamily="@font/nunito_bold"
+                        android:textFontWeight="900" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/item_ing_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/ingredients"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="@dimen/layout_6"
+                        android:textColor="@color/black"
+                        android:layout_marginTop="@dimen/layout_8"
+                        android:textSize="@dimen/text_22"
+                        android:fontFamily="@font/nunito_semibold"
+                        android:textFontWeight="900" />
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/item_ingredient_item"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Butter Beans"
+                            android:gravity="start"
+                            android:layout_weight="1"
+                            android:lineSpacingExtra="@dimen/layout_6"
+                            android:layout_margin="@dimen/layout_8"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/text_18"
+                            android:fontFamily="@font/nunito_regular"
+                            android:textFontWeight="900" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/item_ingredient_measure"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="400g"
+                            android:gravity="end"
+                            android:lineSpacingExtra="@dimen/layout_6"
+                            android:layout_weight="1"
+                            android:layout_margin="@dimen/layout_8"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/text_18"
+                            android:fontFamily="@font/nunito_regular"
+                            android:textFontWeight="900" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/item_tags"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Tags"
+                        android:gravity="start"
+                        android:layout_marginTop="@dimen/layout_10"
+                        android:layout_margin="@dimen/layout_8"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_20"
+                        android:fontFamily="@font/nunito_regular"
+                        android:textFontWeight="900" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/item_video"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="--"
+                        android:gravity="start"
+                        android:layout_marginTop="@dimen/layout_10"
+                        android:layout_margin="@dimen/layout_8"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_20"
+                        android:fontFamily="@font/nunito_regular"
+                        android:textFontWeight="900" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/item_link"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="--"
+                        android:gravity="start"
+                        android:layout_marginTop="@dimen/layout_10"
+                        android:layout_margin="@dimen/layout_8"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_20"
+                        android:fontFamily="@font/nunito_regular"
+                        android:textFontWeight="900" />
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/layout_8"
+                        android:layout_margin="@dimen/layout_8"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/item_instructions_header"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Instructions"
+                            android:layout_gravity="center"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/text_20"
+                            android:fontFamily="@font/nunito_medium"
+                            android:textFontWeight="900" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/item_instructions"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="--"
+                            android:layout_marginTop="@dimen/layout_4"
+                            android:layout_gravity="center"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/text_18"
+                            android:fontFamily="@font/nunito_regular"
+                            android:textFontWeight="900" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

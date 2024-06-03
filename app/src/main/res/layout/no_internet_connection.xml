@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/layout_16"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/nunito_bold"
+        android:gravity="center"
+        android:lineSpacingExtra="@dimen/layout_10"
+        android:text="@string/oops_nno_internet_connection"
+        android:textColor="@color/black"
+        android:textFontWeight="800"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_retry"
+        android:layout_width="@dimen/layout_120"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/layout_40"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/btn_background"
+        android:text="@string/retry"
+        android:layout_below="@+id/textView"
+        android:layout_marginBottom="@dimen/layout_40"
+        android:layout_gravity="center"
+        android:fontFamily="@font/nunito_bold"
+        android:textFontWeight="700"
+        android:textColor="#FFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"/>
+
+</RelativeLayout>

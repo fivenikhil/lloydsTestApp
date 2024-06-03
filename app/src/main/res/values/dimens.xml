@@ -1,0 +1,105 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="btn_corner_radius">400dp</dimen>
+    <dimen name="text_60">60sp</dimen>
+    <dimen name="layout_20">20dp</dimen>
+    <dimen name="layout_18">18dp</dimen>
+    <dimen name="layout_22">22dp</dimen>
+    <dimen name="layout_5">5dp</dimen>
+    <dimen name="layout_10">10dp</dimen>
+    <dimen name="layout_15">15dp</dimen>
+    <dimen name="layout_25">25dp</dimen>
+    <dimen name="text_50">50sp</dimen>
+    <dimen name="layout_400">400dp</dimen>
+    <dimen name="text_40">40sp</dimen>
+    <dimen name="layout_3">3dp</dimen>
+    <dimen name="text_30">30sp</dimen>
+    <dimen name="text_35">35sp</dimen>
+    <dimen name="layout_2">2dp</dimen>
+    <dimen name="layout_30">30dp</dimen>
+    <dimen name="layout_50">50dp</dimen>
+    <dimen name="layout_55">55dp</dimen>
+    <dimen name="text_21">21sp</dimen>
+    <dimen name="text_26">26sp</dimen>
+    <dimen name="layout_100">100dp</dimen>
+    <dimen name="text_25">25sp</dimen>
+    <dimen name="text_22">22sp</dimen>
+    <dimen name="text_31">31sp</dimen>
+    <dimen name="text_34">34sp</dimen>
+
+    <dimen name="layout_40">40dp</dimen>
+    <dimen name="text_15">15sp</dimen>
+    <dimen name="layout_80">80dp</dimen>
+    <dimen name="layout_60">60dp</dimen>
+    <dimen name="layout_150">150dp</dimen>
+    <dimen name="layout_125">125dp</dimen>
+    <dimen name="layout_130">130dp</dimen>
+    <dimen name="layout_minus10">-10dp</dimen>
+    <dimen name="text_24">24sp</dimen>
+    <dimen name="layout_75">75dp</dimen>
+    <dimen name="text_23">23sp</dimen>
+    <dimen name="text_20">20sp</dimen>
+    <dimen name="layout_8">8dp</dimen>
+    <dimen name="text_12">12sp</dimen>
+    <dimen name="layout_65">65dp</dimen>
+    <dimen name="layout_70">70dp</dimen>
+    <dimen name="layout_160">160dp</dimen>
+    <dimen name="layout_70dp">70dp</dimen>
+    <dimen name="layout_700">700dp</dimen>
+    <dimen name="layout_500">500dp</dimen>
+    <dimen name="layout_350">350dp</dimen>
+    <dimen name="layout_300">300dp</dimen>
+    <dimen name="layout_200">200dp</dimen>
+    <dimen name="layout_800">800dp</dimen>
+    <dimen name="layout_480">480dp</dimen>
+
+    <dimen name="layout_6">6dp</dimen>
+    <dimen name="layout_4">4dp</dimen>
+    <dimen name="layout_1">1dp</dimen>
+    <dimen name="layout_250">250dp</dimen>
+    <dimen name="layout_24">24dp</dimen>
+    <dimen name="layout_12">12dp</dimen>
+    <dimen name="layout_48">48dp</dimen>
+    <dimen name="layout_90">90dp</dimen>
+    <dimen name="layout_110">110dp</dimen>
+    <dimen name="layout_35">35dp</dimen>
+    <dimen name="layout_175">175dp</dimen>
+    <dimen name="layout_275">275dp</dimen>
+    <dimen name="layout_225">225dp</dimen>
+    <dimen name="layout_85">85dp</dimen>
+    <dimen name="layout_38">38dp</dimen>
+    <dimen name="layout_63">63dp</dimen>
+    <dimen name="text_2">2sp</dimen>
+    <dimen name="text_1">1sp</dimen>
+    <!--    <dimen name="design_bottom_navigation_text_size" tools:override="true">@dimen/text_12</dimen>
+        <dimen name="design_bottom_navigation_active_text_size" tools:override="true">@dimen/text_15</dimen>-->
+    <dimen name="layout_165">165dp</dimen>
+
+
+
+
+    <dimen name="minus_layout_12">-12dp</dimen>
+    <dimen name="minus_layout_14">-14dp</dimen>
+    <dimen name="minus_layout_400">-400dp</dimen>
+
+    <dimen name="text_14">14sp</dimen>
+    <dimen name="text_18">18sp</dimen>
+    <dimen name="text_16">16sp</dimen>
+    <dimen name="layout_0dp">0dp</dimen>
+    <dimen name="text_65">65dp</dimen>
+    <dimen name="text_55">55dp</dimen>
+    <dimen name="text_52">52dp</dimen>
+    <dimen name="text_45">45dp</dimen>
+    <dimen name="layout_45">45dp</dimen>
+    <dimen name="text_13">13sp</dimen>
+    <dimen name="layout_33">33dp</dimen>
+    <dimen name="layout_120">120dp</dimen>
+    <dimen name="layout_16">16dp</dimen>
+    <dimen name="layout_74">74dp</dimen>
+    <dimen name="layout_52">52dp</dimen>
+    <dimen name="layout_14">14dp</dimen>
+    <dimen name="layout_280">280dp</dimen>
+    <dimen name="layout_270">270dp</dimen>
+</resources>
