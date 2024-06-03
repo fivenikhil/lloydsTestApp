@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.lloyds.myapp.adapters.MealCategoryAdapter
 import com.lloyds.myapp.databinding.FragmentFirstBinding
@@ -20,17 +21,18 @@ import com.lloyds.myapp.utils.UniversalManager.getSessionManagerContext
 import com.lloyds.myapp.utils.UniversalManager.moveToOtherFragment
 import com.lloyds.myapp.utils.UniversalManager.showToast
 import com.lloyds.myapp.viewmodel.MealViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.
  */
-
+@AndroidEntryPoint
 class MealsFragment : Fragment(), OnItemClickListener {
 
     private val TAG = "MealsFragment"
     private var _binding: FragmentFirstBinding? = null
     private val binding get() = _binding!!
-    private lateinit var viewModel: MealViewModel
+    private val viewModel: MealViewModel by activityViewModels()
     var activity: AppCompatActivity? = null
     lateinit var sessionManager: SessionManager
     private lateinit var mMealCategoryAdapter: MealCategoryAdapter
@@ -53,8 +55,8 @@ class MealsFragment : Fragment(), OnItemClickListener {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val connectivityRepository = getInstance(requireContext())
-        viewModel = MealViewModel(connectivityRepository)
+        //val connectivityRepository = getInstance(requireContext())
+        //viewModel = MealViewModel(connectivityRepository)
         binding.lifecycleOwner = viewLifecycleOwner
         binding.viewModel = viewModel
 

@@ -19,13 +19,15 @@ import com.lloyds.myapp.utils.UniversalManager.moveToOtherFragmentBack
 import com.lloyds.myapp.utils.UniversalManager.showToast
 import com.lloyds.myapp.viewmodel.CategoryRecipeViewModel
 import com.lloyds.myapp.viewmodel.MealViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class CategoryRecipeFragment : Fragment(), View.OnClickListener {
 
     private val TAG = "CategoryRecipeFragment"
     private var _binding: FragmentThirdBinding? = null
     private val binding get() = _binding!!
-    private lateinit var viewModel: CategoryRecipeViewModel
+    private val viewModel: CategoryRecipeViewModel by activityViewModels()
     lateinit var sessionManager: SessionManager
     private lateinit var mCategoryRecipeAdapter: CategoryRecipeAdapter
     var activity: AppCompatActivity? = null
@@ -46,8 +48,8 @@ class CategoryRecipeFragment : Fragment(), View.OnClickListener {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val connectivityRepository = UniversalManager.getInstance(requireContext())
-        viewModel = CategoryRecipeViewModel(connectivityRepository)
+        //val connectivityRepository = UniversalManager.getInstance(requireContext())
+       // viewModel = CategoryRecipeViewModel(connectivityRepository)
         binding.lifecycleOwner = viewLifecycleOwner
         binding.viewModel = viewModel
 

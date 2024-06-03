@@ -10,7 +10,9 @@ import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import com.lloyds.myapp.databinding.ActivityMainBinding
 import com.lloyds.myapp.utils.NetworkChangeReceiver
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding

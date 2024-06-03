@@ -24,16 +24,18 @@ import com.lloyds.myapp.utils.UniversalManager.moveToOtherFragmentBack
 import com.lloyds.myapp.utils.UniversalManager.showToast
 import com.lloyds.myapp.viewmodel.MealCategoryViewModel
 import com.lloyds.myapp.viewmodel.MealViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
 /**
  * A simple [Fragment] subclass as the second destination in the navigation.
  */
+@AndroidEntryPoint
 class MealCategoryFragment : Fragment(), View.OnClickListener, OnItemClickListener {
 
     private val TAG = "MealCategoryFragment"
     private var _binding: FragmentSecondBinding? = null
     private val binding get() = _binding!!
-    private lateinit var viewModel: MealCategoryViewModel
+    private val viewModel: MealCategoryViewModel by activityViewModels()
     var activity: AppCompatActivity? = null
     lateinit var sessionManager: SessionManager
     private lateinit var mCategoryItemAdapter: CategoryItemAdapter
@@ -57,8 +59,8 @@ class MealCategoryFragment : Fragment(), View.OnClickListener, OnItemClickListen
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val connectivityRepository = UniversalManager.getInstance(requireContext())
-        viewModel = MealCategoryViewModel(connectivityRepository)
+        //val connectivityRepository = UniversalManager.getInstance(requireContext())
+        //viewModel = MealCategoryViewModel(connectivityRepository)
         binding.lifecycleOwner = viewLifecycleOwner
         binding.viewModel = viewModel
         initVariable()
@@ -132,7 +134,7 @@ class MealCategoryFragment : Fragment(), View.OnClickListener, OnItemClickListen
 
     override fun onItemClickItem(meals: MealItem, position: Int) {
         sessionManager.addMealItemId(meals.idMeal)
-        Log.d("TAG ->>", meals.idMeal.toString())
+        //Log.d("TAG ->>", meals.idMeal.toString())
         moveToOtherFragment(this, R.id.action_SecondFragment_to_ThirdFragment)
     }
 }

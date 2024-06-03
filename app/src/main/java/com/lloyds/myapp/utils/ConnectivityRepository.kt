@@ -4,7 +4,9 @@ import android.content.Context
 import android.net.ConnectivityManager
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.Flow
+import javax.inject.Singleton
 
+@Singleton
 class ConnectivityRepository(context: Context) {
 
     private val connectivityManager =

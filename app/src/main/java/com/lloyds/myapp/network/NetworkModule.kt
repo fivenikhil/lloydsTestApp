@@ -1,34 +1,35 @@
 package com.lloyds.myapp.network
 
-import com.lloyds.myapp.BuildConfig
+import android.content.Context
 import com.lloyds.myapp.constants.AppConstant.Companion.MEAL_CATEGORY_API
+import com.lloyds.myapp.utils.ConnectivityRepository
+import dagger.Module
+import dagger.Provides
+import dagger.hilt.InstallIn
+import dagger.hilt.android.qualifiers.ApplicationContext
+import dagger.hilt.components.SingletonComponent
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.Response
-import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
+import javax.inject.Singleton
 
-object NetworkModule {
+@Module
+@InstallIn(SingletonComponent::class)
+class NetworkModule {
 
-    private val retrofitClient: Retrofit.Builder by lazy {
-
-        val levelType: HttpLoggingInterceptor.Level =
-            if (BuildConfig.BUILD_TYPE.contentEquals("debug")) {
-                HttpLoggingInterceptor.Level.BODY
-                HttpLoggingInterceptor.Level.HEADERS
-            } else HttpLoggingInterceptor.Level.NONE
-
-        val logging = HttpLoggingInterceptor()
-        logging.apply { logging.level = levelType }
-
+    @Provides
+    @Singleton
+    fun theRetrofitInstance(): APIService {
         val okhttpClient = OkHttpClient.Builder()
             .connectTimeout(30, TimeUnit.SECONDS)
             .readTimeout(60, TimeUnit.SECONDS)
             .writeTimeout(30, TimeUnit.SECONDS)
             .addInterceptor(object : Interceptor {
                 override fun intercept(chain: Interceptor.Chain): Response {
+                    // Implement your interceptor logic here
                     val request = chain.request()
                     val authenticatedRequest = request.newBuilder()
                         .header("Content-Type", "application/json")
@@ -37,17 +38,26 @@ object NetworkModule {
                 }
             })
 
-        Retrofit.Builder()
-            .baseUrl(MEAL_CATEGORY_API)
-            .client(okhttpClient.build())
-            .addConverterFactory(GsonConverterFactory.create())
-
+        val API: APIService by lazy {
+            Retrofit.Builder()
+                .baseUrl(MEAL_CATEGORY_API)
+                .client(okhttpClient.build())
+                .addConverterFactory(GsonConverterFactory.create())
+                .build()
+                .create(APIService::class.java)
+        }
+        return API
     }
 
-    val apiInterface: APIService by lazy {
-        retrofitClient
-            .build()
-            .create(APIService::class.java)
+}
+
+@Module
+@InstallIn(SingletonComponent::class)
+object RepositoryModule {
+    @Provides
+    @Singleton
+    fun provideConnectivityRepository(@ApplicationContext context: Context): ConnectivityRepository {
+        return ConnectivityRepository(context)
     }
 }
 

@@ -6,12 +6,17 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
 import com.lloyds.myapp.datamodel.MealCategoryItem
-import com.lloyds.myapp.network.NetworkModule
+import com.lloyds.myapp.network.APIService
 import com.lloyds.myapp.utils.ConnectivityRepository
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.*
 import java.lang.Exception
+import javax.inject.Inject
 
-class MealCategoryViewModel(private val connectivityRepository: ConnectivityRepository)  : ViewModel() {
+@HiltViewModel
+class MealCategoryViewModel  @Inject constructor(private val connectivityRepository: ConnectivityRepository,
+                                                 private val retrofitInstance: APIService
+)  : ViewModel() {
 
     val responseContainer = MutableLiveData<MealCategoryItem>()
     val errorMessage = MutableLiveData<String>()
@@ -29,7 +34,7 @@ class MealCategoryViewModel(private val connectivityRepository: ConnectivityRepo
         job = viewModelScope.launch {
             delay(500)
             try {
-                val response = NetworkModule.apiInterface.mealCategoryItem(mealItem)
+                val response = retrofitInstance.mealCategoryItem(mealItem)
                 withContext(Dispatchers.Main) {
                     Log.d("TAG->", response.raw().request.url.toString())
                     if (response.isSuccessful) {
